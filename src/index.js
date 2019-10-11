@@ -33,7 +33,8 @@ module.exports = {
       const to = (options && options.timeout)?  setTimeout(() => reject('timeout'), options.timeout) : null
       request.addEventListener('load', () => {
         to && clearTimeout(to)
-        resolve(request.status, request.responseText)
+        const {status, responseText} = request
+        resolve({status, responseText})
       })
       if (data) {
         request.send(JSON.stringify(data))
