@@ -18,6 +18,16 @@ module.exports = {
     return this.request({ method: 'POST', url, data, options })
   },
 
+  delete(url, data, options) {
+    if (options) {
+      if (!options.header) { options.header = {} }
+      options.header['Content-Type'] = 'application/json'
+    } else {
+      options = { header: { 'Content-Type' : 'application/json' } }
+    }
+    return this.request({ method: 'DELETE', url, data, options })
+  },
+
   request({method, url, data, header, options}) {
     return new Promise( (resolve, reject) => {
       const request = new XMLHttpRequest()
