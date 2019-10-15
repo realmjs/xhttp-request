@@ -18,6 +18,16 @@ module.exports = {
     return this.request({ method: 'POST', url, data, options })
   },
 
+  put(url, data, options) {
+    if (options) {
+      if (!options.header) { options.header = {} }
+      options.header['Content-Type'] = 'application/json'
+    } else {
+      options = { header: { 'Content-Type' : 'application/json' } }
+    }
+    return this.request({ method: 'PUT', url, data, options })
+  },
+
   delete(url, data, options) {
     if (options) {
       if (!options.header) { options.header = {} }
