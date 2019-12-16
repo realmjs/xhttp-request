@@ -1,6 +1,6 @@
 "use strict"
 
-const SESSION = '__r_session_'
+const SESSION = '__r_s_sess_'
 
 module.exports = {
   get(key) {
