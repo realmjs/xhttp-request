@@ -38,7 +38,7 @@ module.exports = {
     return this.request({ method: 'DELETE', url, data, options })
   },
 
-  request({method, url, data, header, options}) {
+  request({method, url, data, options}) {
     return new Promise( (resolve, reject) => {
       const request = new XMLHttpRequest()
       request.open(method, url, true)
