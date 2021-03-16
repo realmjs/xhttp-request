@@ -1,6 +1,6 @@
 {
   "name": "@realmjs/xhttp-request",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Extension of http-request to use in authentication request",
   "main": "src/index.js",
   "scripts": {
